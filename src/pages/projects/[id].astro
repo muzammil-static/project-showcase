@@ -35,6 +35,7 @@ const { project } = Astro.props;
 					transition:name={`media-container-${project.id}`}
 				>
 					<video 
+						id="project-video"
 						src={project.videoUrl} 
 						poster={project.imageUrl}
 						loop 
@@ -100,3 +101,23 @@ const { project } = Astro.props;
 		</main>
 	</div>
 </Layout>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const video = document.getElementById('project-video');
+		
+		if (video instanceof HTMLVideoElement) {
+			video.addEventListener('mouseenter', () => {
+				video.play().catch((error) => {
+					// Catching potential play interruptions
+					console.warn("Autoplay prevented:", error);
+				});
+			});
+
+			video.addEventListener('mouseleave', () => {
+				video.pause();
+				video.currentTime = 0; // Resets the video to the beginning
+			});
+		}
+	});
+</script>
