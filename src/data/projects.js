@@ -94,7 +94,7 @@ export const projects = [
 
   {
     id: "invexa-plus",
-    title: "Invexa Plus",
+    title: "IMS Web App",
     subtitle: "Inventory Management System",
     shortDescription:
       "A modern inventory management web application featuring product, supplier, sales, purchase, and barcode management.",
@@ -110,7 +110,7 @@ export const projects = [
     videoUrl: "/videos/inventory-demo.mp4",
     imageUrl: "/images/invexa.jpg",
     metrics: [
-      { label: "Features", value: "Inventory + Barcode" },
+      { label: "Features", value: "Inventory" },
       { label: "Platform", value: "Web" }
     ]
   },
@@ -179,7 +179,7 @@ export const projects = [
     videoUrl: "/videos/ims-demo.mp4",
     imageUrl: "/images/pes.jpg",
     metrics: [
-      { label: "Application", value: "Desktop" },
+      { label: "Application", value: "Desktop + Barcode" },
       { label: "Business", value: "Retail" }
     ]
   },
