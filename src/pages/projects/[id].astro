@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects.js';
-import { ArrowLeft, Cpu, Layers, Activity } from 'lucide-react';
+import { ArrowLeft, Cpu } from 'lucide-react';
 
 export function getStaticPaths() {
   return projects.map((project) => ({
@@ -21,7 +21,7 @@ const { project } = Astro.props;
 				href="/" 
 				class="inline-flex items-center gap-2 text-sm font-bold text-muted hover:text-primary transition-colors duration-200 group"
 			>
-				<ArrowLeft class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
+				<ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
 				Back to Showcase
 			</a>
 		</nav>
@@ -42,7 +42,7 @@ const { project } = Astro.props;
 						muted 
 						controls
 						playsinline
-						controlsList="nodownload"
+						controlslist="nodownload"
 						oncontextmenu="return false;"
 						class="w-full h-auto max-h-[75vh] object-contain rounded-2xl"
 					>
@@ -86,7 +86,7 @@ const { project } = Astro.props;
 
 				<div class="space-y-4">
 					<h3 class="text-sm font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
-						<Cpu class="w-4 h-4 text-accent" /> Applied Architecture & Tech Stack
+						<Cpu className="w-4 h-4 text-accent" /> Applied Architecture & Tech Stack
 					</h3>
 					<div class="flex flex-wrap gap-2 pt-1">
 						{project.tags.map((tag) => (
