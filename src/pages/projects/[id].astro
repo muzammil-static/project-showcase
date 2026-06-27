@@ -35,7 +35,6 @@ const { project } = Astro.props;
 					transition:name={`media-container-${project.id}`}
 				>
 					<video 
-						ref={videoRef}
 						src={project.videoUrl} 
 						poster={project.imageUrl}
 						loop 
@@ -45,11 +44,6 @@ const { project } = Astro.props;
 						controlslist="nodownload"
 						oncontextmenu="return false;"
 						class="w-full h-auto max-h-[75vh] object-contain rounded-2xl"
-						onMouseEnter={() => videoRef.current?.play()}
-        				onMouseLeave={() => {
-          					videoRef.current?.pause();
-          					videoRef.current.currentTime = 0;
-						}}
 					>
 						Your browser does not support video playbacks.
 					</video>
