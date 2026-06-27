@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WelcomeGreeting from '../components/WelcomeGreeting.jsx';
+import ProjectTile from '../components/ProjectTile.jsx';
+import { projects } from '../data/projects.js';
+---
+
+<Layout title="Showcase | Dynamic Project Portfolio">
+	<div class="floating-circle floating-circle-1"></div>
+	<div class="floating-circle floating-circle-2"></div>
+	<div class="floating-circle floating-circle-3"></div>
+
+	<!-- Hero Section -->
+	<section class="relative w-full min-h-[75vh] flex flex-col justify-center border-b border-border/40">
+		<!-- Hero Background Image -->
+		<div class="absolute inset-0 bg-[url('/hero.jpg')] bg-cover bg-center bg-fixed"></div>
+		<!-- Dark Overlay for text contrast (No blur, so image is fully visible) -->
+		<div class="absolute inset-0 bg-black/50"></div>
+		
+		<div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-20 mt-8 md:mt-0">
+			<WelcomeGreeting client:load />
+		</div>
+	</section>
+
+	<main class="max-w-6xl mx-auto px-6 py-12 md:py-16 space-y-16 md:space-y-24">
+
+		<!-- Section Divider -->
+		<div class="flex items-center justify-center gap-4 py-8">
+			<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent"></div>
+			<div class="flex items-center gap-2">
+				<div class="w-2 h-2 rounded-full bg-secondary"></div>
+			</div>
+			<div class="flex-1 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent"></div>
+		</div>
+
+		<section id="projects" class="space-y-12">
+			<div class="text-center space-y-4">
+				<h2 class="text-3xl md:text-5xl font-bold font-heading text-foreground">Featured Projects</h2>
+				<p class="text-muted text-lg max-w-2xl mx-auto">Explore my latest work across web, mobile, and AI technologies</p>
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pt-4">
+				{projects.map((project, index) => (
+					<ProjectTile 
+						project={project} 
+						index={index} 
+						client:visible 
+					/>
+				))}
+			</div>
+		</section>
+
+	</main>
+</Layout>
