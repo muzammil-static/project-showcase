@@ -18,9 +18,12 @@ export default function ProjectTile({ project, index }) {
           <>
             <video
               src={project.videoUrl}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              autoPlay
               muted
               loop
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </>
         ) : (
